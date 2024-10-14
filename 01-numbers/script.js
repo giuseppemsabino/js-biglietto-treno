@@ -29,16 +29,19 @@ let totalPrice= (tripDistance * kmPrice)
 if(passenegerAge < 18 ){
  const kidDiscount= totalPrice * 0.20;
 
-    console.log(totalPrice - kidDiscount)
-}else if(passenegerAge > 65){
-    const elderDiscount= totalPrice * 0.40;
-
-    console.log(totalPrice - elderDiscount)
-}else{
-    console.log(totalPrice);
+    console.log('Essendo minore di 18 anni si applica lo sconto infantile di un -20% sull totale del biglietto. totale = ' + (totalPrice - kidDiscount) + '€')
 }
 //se il passegero e maggiore di 65 anni si applica uno sconto del 40%
+else if(passenegerAge > 65){
+    const elderDiscount= totalPrice * 0.40;
+
+    console.log('Essendo maggiore di 65 annisi applica lo sconto terza età di -40% sull totale del biglietto. totale = ' + (totalPrice - elderDiscount) + '€')
+}
 //altrementi il prezzo rimane il calcolato ariginalemte 
+else{
+    console.log('il totale sarebbe di = ' + (totalPrice) + '€');
+}
+
 
 
 /*OUTPUT*/
