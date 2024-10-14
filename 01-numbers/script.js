@@ -9,3 +9,22 @@
 // - va applicato uno sconto del 40% per gli over 65.
 // - L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.
 // Buon lavoro!
+
+/*RACCOLTA DATI */
+// quanti km deve percorrere
+const tripDistance = parseInt(prompt('Qualè la distanza da percorrere'))
+console.log(tripDistance)
+//età del passegero 
+const passenegerAge= parseInt(prompt('Età del passegero'))
+console.log(passenegerAge)
+
+
+/*ELABORAZIONE */
+//diepnedendo da quanti km calcolare il prezo del biglietto (ogni km sono 0.21 €) numero di km * 0.21€
+// se il passegero el minore di 18 anni si applica uno sconto del 20%
+//se il passegero e maggiore di 65 anni si applica uno sconto del 40%
+//altrementi il prezzo rimane il calcolato ariginalemte 
+
+
+/*OUTPUT*/
+//mostrare il prezzo del biglietto con un massimo di 2 decimali 
