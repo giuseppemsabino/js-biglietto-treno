@@ -24,12 +24,18 @@ const kmPrice= 0.21;
 /*ELABORAZIONE */
 //diepnedendo da quanti km calcolare il prezo del biglietto (ogni km sono 0.21 €) numero di km * 0.21€
 let totalPrice= (tripDistance * kmPrice)
- console.log(totalPrice);
+ 
 // se il passegero el minore di 18 anni si applica uno sconto del 20%
 if(passenegerAge < 18 ){
- const kidiscount= totalPrice * 0.20;
+ const kidDiscount= totalPrice * 0.20;
 
-    console.log(totalPrice - kidiscount)
+    console.log(totalPrice - kidDiscount)
+}else if(passenegerAge > 65){
+    const elderDiscount= totalPrice * 0.40;
+
+    console.log(totalPrice - elderDiscount)
+}else{
+    console.log(totalPrice);
 }
 //se il passegero e maggiore di 65 anni si applica uno sconto del 40%
 //altrementi il prezzo rimane il calcolato ariginalemte 
