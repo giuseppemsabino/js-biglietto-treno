@@ -12,15 +12,18 @@
 
 /*RACCOLTA DATI */
 // quanti km deve percorrere
-const tripDistance = parseInt(prompt('Qualè la distanza da percorrere'))
-console.log(tripDistance)
+const tripDistance = parseInt(prompt('Qualè la distanza da percorrere'));
+console.log(tripDistance);
 //età del passegero 
-const passenegerAge= parseInt(prompt('Età del passegero'))
-console.log(passenegerAge)
+const passenegerAge= parseInt(prompt('Età del passegero'));
+console.log(passenegerAge);
+
+const kmPrice= 0.21;
 
 
 /*ELABORAZIONE */
 //diepnedendo da quanti km calcolare il prezo del biglietto (ogni km sono 0.21 €) numero di km * 0.21€
+ console.log(tripDistance * kmPrice);
 // se il passegero el minore di 18 anni si applica uno sconto del 20%
 //se il passegero e maggiore di 65 anni si applica uno sconto del 40%
 //altrementi il prezzo rimane il calcolato ariginalemte 
