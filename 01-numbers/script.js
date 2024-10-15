@@ -11,40 +11,60 @@
 // Buon lavoro!
 
 /*RACCOLTA DATI */
+
 // quanti km deve percorrere
-const tripDistance = parseInt(prompt('Qualè la distanza da percorrere'));
-console.log(tripDistance);
-//età del passegero 
-const passenegerAge= parseInt(prompt('Età del passegero'));
-console.log(passenegerAge);
+const tripDistance = parseInt(prompt("Qualè la distanza da percorrere"));
 
-const kmPrice= 0.21;
+//età del passegero
+const passenegerAge = parseInt(prompt("Età del passegero"));
 
+const kmPrice = 0.21;
+let outputMessage = "";
 
 /*ELABORAZIONE */
+const isTripDistanceValid = !isNaN(tripDistance) && tripDistance > 0;
+const isPassengerAgeValid = !isNaN(passenegerAge) && passenegerAge >= 0;
 //diepnedendo da quanti km calcolare il prezo del biglietto (ogni km sono 0.21 €) numero di km * 0.21€
-let totalPrice= (tripDistance * kmPrice)
- 
-// se il passegero el minore di 18 anni si applica uno sconto del 20%
-if(passenegerAge < 18 ){
- const kidDiscount= totalPrice * 0.20;
- totalPrice = totalPrice - kidDiscount;
 
-    console.log('Essendo minore di 18 anni si applica lo sconto infantile di un -20% sull totale del biglietto. totale = ' + (totalPrice.toFixed(2)) + '€');
-}
-//se il passegero e maggiore di 65 anni si applica uno sconto del 40%
-else if(passenegerAge > 65){
-    const elderDiscount= totalPrice * 0.40;
+if (isPassengerAgeValid && isTripDistanceValid) {
+  let totalPrice = tripDistance * kmPrice;
+
+  // se il passegero el minore di 18 anni si applica uno sconto del 20%
+  if (passenegerAge < 18) {
+    const kidDiscount = totalPrice * 0.2;
+    totalPrice = totalPrice - kidDiscount;
+
+    outputMessage += `Essendo minore di 18 anni si applica lo sconto infantile di un -20% sull totale del biglietto. totale =   ${totalPrice.toFixed(
+      2
+    )}  €`;
+  }
+  //se il passegero e maggiore di 65 anni si applica uno sconto del 40%
+  else if (passenegerAge > 65) {
+    const elderDiscount = totalPrice * 0.4;
     totalPrice = totalPrice - elderDiscount;
 
-    console.log('Essendo maggiore di 65 annisi applica lo sconto terza età di -40% sull totale del biglietto. totale = ' + (totalPrice.toFixed(2)) + '€');
+    outputMessage += `Essendo maggiore di 65 annisi applica lo sconto terza età di -40% sull totale del biglietto. totale =   ${totalPrice.toFixed(
+      2
+    )}  €`;
+  }
+  //altrementi il prezzo rimane il calcolato ariginalemte
+  else {
+    outputMessage += `il totale sarebbe di =  ${totalPrice.toFixed(2)} €`;
+  }
 }
-//altrementi il prezzo rimane il calcolato ariginalemte 
 else{
-    console.log('il totale sarebbe di = ' + (totalPrice.toFixed(2)) + '€');
+    outputMessage = `Errore:`;
+
+    if(!isPassengerAgeValid){
+        outputMessage += " \n Età non valida";
+    }
+
+    if(!isTripDistanceValid){
+        outputMessage += " \n Distanza non valida";
+    }
 }
-
-
 
 /*OUTPUT*/
-//mostrare il prezzo del biglietto con un massimo di 2 decimali 
+//mostrare il prezzo del biglietto con un massimo di 2 decimali
+
+alert(outputMessage);
